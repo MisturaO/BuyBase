@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+
+.home-page {
+  align-items: center;
+  background-color: #1ec8aa;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.logo {
+  width: 400px;
+  position: static;
+}
+
+.navbar {
+  background-color: #1ec8aa;
+  margin-left: 50%;
+  position: relative;
+}
+
+.navbar-btn {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 50vw;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 40px;
+  margin: 20px 20px 0;
+  width: 100px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #1ec8aa;
+}
+
+#search-bar {
+  margin-top: 20px;
+}
+
+.thumbnail {
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+}
