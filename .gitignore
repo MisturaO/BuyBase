@@ -1,3 +1,4 @@
 .devcontainer
 node_modules
 env*
+buy_base_env
