@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         fontFamily: "Baloo Tammudu 2",
         fontSize: "30px",
         fontStyle: "normal",
-        fontWeight: 800,
+        fontWeight: 700,
         lineHeight: "100%", /* 52.8px */
         // marginBottom: 90,
         // width: 1500,
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     button: {
         color: "#C55656",
         border: "1px solid #C55656",
-        borderRadius: "3px 0 3px 0"
+        borderRadius: "3px 0 3px 0",
+        cursor: "pointer"
     },
     img: {
         margin: "15px 0 0 100px"
