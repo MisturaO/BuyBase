@@ -22,7 +22,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           <span>{product.stock} Items in stock</span>
           <h3>{product.product_title}</h3>
           <div className={styles.cardStarsWrapper}>
-            <Rating stars={product.rating} />
+            <Rating stars={product.rating ?? 0} />
             <span>{product.comments} comments</span>
           </div>
         </div>

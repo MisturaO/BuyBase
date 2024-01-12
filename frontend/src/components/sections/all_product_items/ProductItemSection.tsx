@@ -1,6 +1,6 @@
 import { ProductItemsWrapper } from './productitemsection.syled';
 import { ProductCard } from '../../reusable/cards';
-import { FeaturedSection } from '../featured';
+import { FeaturedBanner } from '../featured';
 import { all_product } from './constant';
 import useScreenSize from '../../../hooks/useScreensize';
 import { getScreenDifference } from '../../../utils/utils';
@@ -30,7 +30,7 @@ const ProductItemSection = () => {
                 all_product[Math.floor(Math.random() * all_product.length)]
               }
             />
-            <FeaturedSection key={`featured_banner${toAddBanner}`} />{' '}
+            <FeaturedBanner key={`featured_banner${toAddBanner}`} />{' '}
           </>
         );
       })}
