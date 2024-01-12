@@ -1,4 +1,3 @@
-import React from 'react';
 import { FeaturedSectionWrapper } from './featuredsection.styled';
 import FeaturedProductCard from '../../reusable/cards/FeatureProductCard';
 import { productdata } from './constant';

@@ -1,9 +1,7 @@
-import React from 'react';
-// import propTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
-import footerImage from './assets/image 28.png';
+import footerImage from '/assets/images/image 28.png';
 
-export function Footer() {
+export default function Footer() {
   return (
     <>
       <div className={css(styles.subscribe)}>
@@ -65,15 +63,12 @@ export function Footer() {
 // }
 const styles = StyleSheet.create({
   subscribe: {
-    width: 1200,
     height: 316,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     backgroundColor: '#F2F3F5',
     position: 'relative',
-    margin: 'auto',
-    marginTop: 20,
     textAlign: 'left',
   },
   h2: {
@@ -104,13 +99,11 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: '#F8F3F0',
-    width: 1200,
+
     height: 316,
-    margin: 'auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '20px',
     fontSize: '14px',
     lineHeight: '170%' /* 27.2px */,
     fontFamily: 'Baloo Tammudu 2',
