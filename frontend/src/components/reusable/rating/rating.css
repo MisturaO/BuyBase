@@ -1,0 +1,135 @@
+:root {
+  --bg: hsl(223, 10%, 90%);
+  --fg: hsl(223, 10%, 10%);
+  --primary: hsl(223, 90%, 55%);
+  --yellow: hsl(38, 90%, 55%);
+  --yellow-t: hsla(38, 90%, 55%, 0);
+  --bezier: cubic-bezier(0.42, 0, 0.58, 1);
+  --trans-dur: 0.3s;
+  font-size: calc(24px + (30 - 24) * (100vw - 320px) / (1280 - 320));
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.rating__star {
+  display: block;
+  overflow: visible;
+  fill: hsl(223, 10%, 80%);
+  pointer-events: none;
+}
+
+.rating__star-ring,
+.rating__star-fill,
+.rating__star-line,
+.rating__star-stroke {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.rating__star-ring,
+.rating__star-fill,
+.rating__star-line {
+  stroke: var(--yellow);
+}
+.rating__star-fill {
+  fill: var(--yellow);
+  transform: scale(0);
+  transition: fill var(--trans-dur) var(--bezier),
+    transform var(--trans-dur) var(--bezier);
+}
+.rating__star-stroke {
+  stroke: hsl(223, 10%, 80%);
+  transition: stroke var(--trans-dur);
+}
+
+.rating__star.in-hover .rating__star-stroke {
+  stroke: var(--yellow);
+  transform: scale(1.05);
+}
+
+.rating__wrapper:has(.rating__star.starred) .rating__star-ring {
+  animation-name: starRing;
+}
+.rating__wrapper:has(.rating__star.starred) .rating__star-stroke {
+  animation-name: starStroke;
+}
+
+.rating__wrapper:has(.rating__star.starred) .rating__star-line {
+  animation-name: starLine;
+}
+
+.rating__wrapper:has(.rating__star.starred) .rating__star-fill {
+  animation-name: starFill;
+}
+
+.rating__wrapper:has(.rating__star.starred) .rating__star-fill {
+  fill: var(--yellow);
+}
+
+/* Animations */
+@keyframes starRing {
+  from,
+  20% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    r: 8px;
+    stroke-width: 16px;
+    transform: scale(0);
+  }
+  35% {
+    animation-timing-function: ease-out;
+    opacity: 0.5;
+    r: 8px;
+    stroke-width: 16px;
+    transform: scale(1);
+  }
+  50%,
+  to {
+    opacity: 0;
+    r: 16px;
+    stroke-width: 0;
+    transform: scale(1);
+  }
+}
+@keyframes starFill {
+  from,
+  40% {
+    animation-timing-function: ease-out;
+    transform: scale(0);
+  }
+  60% {
+    animation-timing-function: ease-in-out;
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes starStroke {
+  from {
+    transform: scale(1);
+  }
+  20%,
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes starLine {
+  from,
+  40% {
+    animation-timing-function: ease-out;
+    stroke-dasharray: 1 23;
+    stroke-dashoffset: 1;
+  }
+  60%,
+  to {
+    stroke-dasharray: 12 12;
+    stroke-dashoffset: -12;
+  }
+}
