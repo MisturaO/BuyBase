@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import footerImage from '/assets/images/image28.png';
 import { StyleSheet, css } from 'aphrodite';
 
