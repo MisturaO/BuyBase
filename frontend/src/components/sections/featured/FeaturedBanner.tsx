@@ -24,12 +24,17 @@ export default function FeaturedBanner() {
           </button>
         </div>
         <div className={css(styles.imageWrapper)}>
-          <img src={featureImg2} alt='featureImg' height='270' />
-          <img src={featureImg1} alt='featureImg' height='310' />
+          <img src={featureImg2} alt='featureImg' height='270'  className={css(styles.featureImg2)}/>
+          <img src={featureImg1} alt='featureImg' height='310' className={css(styles.featureImg1)}/>
         </div>
       </section>
     </>
   );
+}
+
+const screenSize = {
+  smartphone: '@media(max-width: 767px)',
+  tablets: '@media(min-width: 767px) and (max-width: 1200px)'
 }
 
 const styles = StyleSheet.create({
@@ -63,6 +68,9 @@ const styles = StyleSheet.create({
   },
   Boxtext: {
     marginLeft: 100,
+    [screenSize.smartphone]: {
+      marginLeft: '30px'
+    }
   },
   button: {
     color: '#C55656',
@@ -80,4 +88,22 @@ const styles = StyleSheet.create({
   buttonIcon: {
     marginRight: '8px',
   },
+  featureImg2 : {
+  [screenSize.tablets]: {
+    
+      display: 'none',
+  },
+  [screenSize.smartphone]: {
+    display: 'none'
+  }
+},
+featureImg1: {
+  [screenSize.tablets]: {
+    marginRight: '100px'
+},
+[screenSize.smartphone]: {
+    marginRight: '250px',
+    // height: '250px'
+},
+}
 });
